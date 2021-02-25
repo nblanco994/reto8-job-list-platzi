@@ -7,7 +7,7 @@ export class API {
     // el uso del try / catch para el manejo de errores
     try {
       // hacemos una peticion asincrona a data.json
-      const data = await fetch("../data.json");
+      const data = await fetch("./data.json");
       // la data debemos transformarla a un json para poder usarla
       const res = await data.json();
       // retornamos la respuesta

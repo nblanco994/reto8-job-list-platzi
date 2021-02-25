@@ -10,11 +10,13 @@
     --dark-grayish-cyan: hsl(180, 8%, 52%);
     --very-dark-grayish-cyan: hsl(180, 14%, 20%);
     --desaturated-dark-cyan: hsl(180, 29%, 50%);
+    --Dark-Grayish-Cyan: hsl(180, 8%, 52%);
+    --Light-Grayish-Cyan--Background: hsl(180, 52%, 96%);
   }
   
   .header {
     background-color: var(--desaturated-dark-cyan);
-    background-image: url('/images/bg-header-mobile.svg');
+    background-image: url('../images/bg-header-mobile.svg');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -26,6 +28,7 @@
     background: var(--light-grayish-cyan);
     display: flex;
     flex-direction: column;
+    
   }
   
   .card {
@@ -43,7 +46,6 @@
   .card-body-container__header-title {
     color: var(--desaturated-dark-cyan);
     font-weight: 700;
-    /* margin-top: 20px; */
     margin-bottom: 10px;
   }
   .header-title__new {
@@ -59,15 +61,16 @@
     align-items: center;
     border-radius: 50px;
     margin-left: 5px;
-    padding: 3px 5px;
+    margin-top: -7px;
+    padding:  9px 7px 5px 7px;
+    font-size: 12px;
   }
   
-  .card.feature {
+  .card.feature:nth-of-type(1),.card.feature:nth-of-type(2) {
     border-left: 5px solid var(--desaturated-dark-cyan);
   }
   
   .card-container {
-    /* margin-top: 30px; */
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
@@ -81,8 +84,49 @@
     height: 100%;
     justify-content: space-evenly;
   }
-  
-  .card-body-tags {
+  .parameter-filter__right {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 12px;
+    flex-shrink: 1;
+    flex-grow: 1;
+   
+  }
+  .filter {
+    background-color: var(--light-grayish);
+    color: var(--desaturated-dark-cyan);
+    font-weight: 700;
+    border-radius: 4px;
+    margin: 0.5em 0.5em 0.5em 0;
+  }
+  .filter__wrapper {
+    display: flex;
+    align-items: stretch;
+    height: 28px;
+  }
+  .filter__label {
+    display: inline-block;
+    padding: 0.5em;
+    font-size: 0.8em;
+  }
+  .filter__btn {
+    border: none;
+    outline: none;
+    border-radius: 0 4px 4px 0;
+    background-color: var(--desaturated-dark-cyan);
+    color: white;
+    width: 35px;
+    font-weight: 700;
+    font-size: 1.3em;
+    cursor: pointer;
+    padding: 4px;
+    transition: 0.3s ease;
+  }
+  .filter__btn:hover {
+    background-color: black;
+  }
+  .categories {
     border-top: 1px solid var(--dark-grayish-cyan);
     width: 100%;
     height: auto;
@@ -125,11 +169,11 @@
   }
   
   .card-body-container__contract p {
-    margin-left: 5px;
+    margin-left: 0px;
   }
   .card-body-container h2 {
     font-size: 1.2em;
-    margin-bottom: 10px;
+    margin-bottom: 11px;
   }
   
   .card-body-container__header-title {
@@ -139,7 +183,6 @@
   
   .search-find {
     width: 60%;
-    /* height: 200px; */
     background-color: red;
     border-radius: 10px;
     min-height: 120px;
@@ -147,7 +190,7 @@
   }
   
   .card-body-container {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
   }
   
@@ -184,27 +227,28 @@
     border-bottom-right-radius: 3px;
     border-top-right-radius: 3px;
   }
-  .parameters-filter--deactive {
+  .parameters-filter{
     display: none;
   }
-  .parameters-filter--active {
-    display: flex;
-  }
-  .parameters-filter {
+  .parameters-filter, #parameters {
     background: white;
-    width: 80%;
+    width: 95%;
     box-shadow: 0 1px 16px -11px black;
     border-radius: 10px;
     margin-top: -22px;
-    margin-left: 38px;
+    margin-left: 10px;
+    margin-right: 12px;
+    align-items: center;
+    justify-content: space-between;
   }
   .parameter-filter__right {
-    width: 70%;
+    width: 700%;
   }
   .parameter-filter__left {
     height: 90px;
-    width: 30%;
+    width: 40%;
     display: flex;
+    padding-right: 20px;
     justify-content: center;
     align-items: center;
   }
@@ -218,4 +262,137 @@
     font-weight: 700;
     color: var(--dark-grayish-cyan);
   }
+  .job-tags{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+  }
+
+@media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header {
+    background-image: url('../images/bg-header-desktop.svg');
+  }
+  .card {
+    padding: 10px;
+    height: auto;
+  }
+  .categories {
+    border-top: 0;
+    margin-top: 25px;
+  }
+  .card-body-logo {
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+  }
+  .card-body-container__title {
+    user-select: none;
+  }
+  .card-body-container__contract{
+    font-size: 15px;
+  }
+  .card-body h2{
+    font-size: 18px;
+  }
+  .card-body-logo__img {
+    width: 75px;
+  }
+  .card-body {
+    flex-direction: row;
+  }
+  .categories {
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-right: auto;
+  }
+  .card-body-container {
+    width: 50%;
+    margin-top: 17px;
+    margin-bottom: 17px;
+  }
+  .parameters-filter, #parameters {
+      background: white;
+      width: 76%;
+      box-shadow: 0 1px 16px -11px black;
+      border-radius: 10px;
+      margin-top: -22px;
+      margin-left: 15px;
+      align-items: center;
+      justify-content: space-between;
+  }
+  .parameter-filter__right {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+  }
+  .parameter-filter__left {
+    height: auto;
+    width: 40%;
+    display: flex;
+    padding-right: 0px;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-container {
+    width: 80%;
+  }
+  .parameter-filter__left-button{
+    width: 200px;
+  }
+  .card-body-container__title:hover {
+    color: var(--desaturated-dark-cyan);
+  }
+  .btn:hover {
+    background-color: var(--desaturated-dark-cyan);
+    color: white;
+  }
+  .search-parameter__button:hover {
+    background-color: var(--very-dark-grayish-cyan);
+  }
+  .parameter-filter__left-button:hover{
+    color:var(--desaturated-dark-cyan)
+  }
+  .filter {
+    background-color: var(--light-grayish);
+    color: var(--desaturated-dark-cyan);
+    font-weight: 700;
+    border-radius: 4px;
+    height: 35px;
+    margin: 0.5em 0.5em 0.5em 0;
+  }
+  .filter__wrapper {
+    display: flex;
+    align-items: stretch;
+    height: 35px;
+  }
+  .filter__label {
+    display: inline-block;
+    padding: .7em;
+    font-size: 0.9em;
+  }
+  .filter__btn {
+    border: none;
+    outline: none;
+    border-radius: 0 4px 4px 0;
+    background-color: var(--desaturated-dark-cyan);
+    color: white;
+    width: 40px;
+    font-weight: 700;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5.5px;
+    transition: 0.3s ease;
+  }
+}
   
